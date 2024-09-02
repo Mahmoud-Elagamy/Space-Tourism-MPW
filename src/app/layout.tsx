@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bellefair.variable} ${barlow.variable}`}>
-      <body>
+      <body className="bg-[#0B0D17]">
         <Header />
         {children}
       </body>

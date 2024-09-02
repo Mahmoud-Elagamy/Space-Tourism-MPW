@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   background-image: url("../../public/assets/home/background-home-desktop.jpg");
   background-size: cover;
   min-height: 100vh;
+} */
+
+/* main {
+  min-height: calc(100vh - 80px);
 }
+
+@media screen and (min-width: 768px) {
+  main {
+    min-height: calc(100vh - 112px);
+  }
+} */
