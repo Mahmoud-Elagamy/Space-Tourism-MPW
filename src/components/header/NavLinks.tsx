@@ -13,10 +13,10 @@ const NavLinks = ({ closeDrawer }: { closeDrawer?: () => void }) => {
             href={`/${link.includes("00") ? "" : link.slice(3)}`}
             aria-label={`Navigate to ${link.slice(3)} page`}
             onClick={closeDrawer}
-            className={`relative opacity-50 transition duration-500 after:absolute after:top-8 after:block after:h-1 after:w-full after:scale-0 after:rounded after:bg-[#D0D6F9] after:transition after:duration-500 hover:opacity-100 after:hover:scale-100 md:after:top-12 ${
+            className={`relative transform transition duration-500 after:absolute after:left-1/2 after:top-8 after:block after:h-1 after:-translate-x-1/2 after:rounded after:bg-[#BCC4D8] after:transition-all after:duration-500 hover:opacity-100 after:hover:w-full md:after:top-10 ${
               pathname === `/${link.includes("00") ? "" : link.slice(3)}`
-                ? "opacity-100 after:scale-100"
-                : ""
+                ? "opacity-100 after:w-full"
+                : "opacity-50 after:w-0"
             }`}
           >
             {link}

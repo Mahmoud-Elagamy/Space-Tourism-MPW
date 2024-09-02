@@ -21,15 +21,19 @@ const Header = () => {
         <Link href="/" title="Logo" aria-label="Navigate to homepage">
           <Image src={logo} alt="Logo" width={48} height={48} priority />
         </Link>
-        <nav className="absolute left-[45%] right-0 hidden rounded-sm bg-[#D0D6F9]/5 p-8 drop-shadow backdrop-blur before:absolute before:-left-[55%] before:top-1/2 before:z-[1] before:block before:h-[1px] before:w-[58%] before:-translate-y-1/2 before:bg-white/25 lg:block">
+
+        <nav className="absolute left-[45%] right-0 hidden rounded-sm border border-white/20 bg-gradient-to-r from-[#0b0d1780] to-[#0c1d3980] p-6 drop-shadow-lg backdrop-blur-md before:absolute before:-left-[55%] before:top-1/2 before:z-[1] before:block before:h-[1px] before:w-[58%] before:-translate-y-1/2 before:bg-gradient-to-r before:from-white/50 before:to-white/25 lg:block">
           <NavLinks />
         </nav>
+
         <Button
           className="lg:hidden"
           type="text"
           icon={<IconHamburger />}
           onClick={showDrawer}
+          aria-label="Open menu"
         />
+
         <Drawer
           placement="right"
           onClose={closeDrawer}

@@ -5,7 +5,7 @@ import { FaRocket } from "react-icons/fa";
 
 const ExploreButton = () => {
   return (
-    <Link href="/destination">
+    <Link href="/destination" aria-label="Explore destination">
       <motion.div
         className="relative flex size-40 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#0B0D19] to-[#0C1D39] md:size-60"
         initial="rest"
