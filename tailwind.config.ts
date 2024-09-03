@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "12px",
+      padding: "16px",
     },
     extend: {
       fontFamily: {
