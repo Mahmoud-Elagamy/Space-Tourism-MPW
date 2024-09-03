@@ -55,8 +55,8 @@ function CrewContent() {
               <Image
                 src={person.images.png}
                 alt={person.name}
-                width={300}
-                height={300}
+                width={350}
+                height={350}
                 priority
               />
             </motion.picture>
