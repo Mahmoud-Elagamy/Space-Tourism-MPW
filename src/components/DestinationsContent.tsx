@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Tabs, Spin } from "antd";
 import { motion, AnimatePresence } from "framer-motion";
-import { destinations } from "@/app/destination/data";
+import { destinationsData } from "@/app/destination/data";
 
 // Motion configurations
 const imageMotionConfig = {
@@ -42,7 +42,7 @@ function Destinations() {
     setTimeout(() => setLoading(false), 400);
   };
 
-  const tabItems = destinations.map((destination, index) => ({
+  const tabItems = destinationsData.map((destination, index) => ({
     label: destination.name.toUpperCase(),
     key: index.toString(),
     children: loading ? (

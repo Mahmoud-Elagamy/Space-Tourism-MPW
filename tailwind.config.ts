@@ -26,6 +26,9 @@ const config: Config = {
           "url('/assets/destination/background-destination-tablet.jpg')",
         "destination-desktop":
           "url('/assets/destination/background-destination-desktop.jpg')",
+        "crew-mobile": "url('/assets/crew/background-crew-mobile.jpg')",
+        "crew-tablet": "url('/assets/crew/background-crew-tablet.jpg')",
+        "crew-desktop": "url('/assets/crew/background-crew-desktop.jpg')",
       },
       animation: {
         "spin-slow": "spin 24s linear infinite",

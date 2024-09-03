@@ -1,4 +1,4 @@
-export const destinations = [
+export const destinationsData = [
   {
     name: "Moon",
     images: {

@@ -1,8 +1,8 @@
-import Destinations from "@/components/Destinations";
+import Destinations from "@/components/DestinationsContent";
 
 const Destination = () => {
   return (
-    <main className="main bg-destination-mobile font-sans md:bg-destination-tablet lg:bg-destination-desktop">
+    <main className="main bg-destination-mobile md:bg-destination-tablet lg:bg-destination-desktop">
       <div className="container">
         <h1 className="mt-8 font-headings text-2xl font-bold uppercase tracking-widest text-[#D0D6F9] lg:mt-0 lg:text-3xl">
           01 Pick your destination

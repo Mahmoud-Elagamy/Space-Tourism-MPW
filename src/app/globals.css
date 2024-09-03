@@ -26,3 +26,7 @@
 .ant-tabs-tab-btn:hover {
   color: white;
 }
+
+.crew-content .ant-tabs {
+  flex-direction: column-reverse;
+}
