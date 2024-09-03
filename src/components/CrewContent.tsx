@@ -54,7 +54,7 @@ function CrewContent() {
         {!loading && (
           <motion.div
             key={index}
-            className="flex h-[700px] flex-row-reverse flex-wrap items-center justify-center md:h-[644px] lg:h-[444px] lg:justify-between"
+            className="flex h-[728px] flex-row-reverse flex-wrap items-center justify-center md:h-[644px] lg:h-[444px] lg:justify-between"
           >
             {/* Left Side: Crew Image */}
             <motion.picture {...imageMotionConfig} className="mb-8 lg:mb-0">
