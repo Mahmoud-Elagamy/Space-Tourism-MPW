@@ -13,9 +13,9 @@ const imageMotionConfig = {
 };
 
 const contentMotionConfig = {
-  initial: { opacity: 0, x: 50 },
+  initial: { opacity: 0, x: -50 },
   animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -50 },
+  exit: { opacity: 0, x: 50 },
   transition: { duration: 0.6 },
 };
 
@@ -39,7 +39,7 @@ function Destinations() {
   const onTabChange = (key: string) => {
     setLoading(true);
     setActiveTab(key);
-    setTimeout(() => setLoading(false), 300);
+    setTimeout(() => setLoading(false), 400);
   };
 
   const tabItems = destinations.map((destination, index) => ({
@@ -57,7 +57,10 @@ function Destinations() {
             className="flex flex-row-reverse flex-wrap items-center justify-center lg:justify-between"
           >
             {/* Left Side: Planet Image */}
-            <motion.picture {...imageMotionConfig} className="mb-4 lg:mb-0">
+            <motion.picture
+              {...imageMotionConfig}
+              className="mb-4 overflow-hidden lg:mb-0"
+            >
               <source srcSet={destination.images.webp} type="image/webp" />
               <Image
                 src={destination.images.png}
