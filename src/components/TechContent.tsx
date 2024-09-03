@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Tabs, Spin } from "antd";
 import { motion, AnimatePresence } from "framer-motion";
-import { crewData } from "@/app/crew/data";
+import { techData } from "@/app/technology/data";
 
 // Motion configurations
 const imageMotionConfig = {
@@ -13,13 +13,13 @@ const imageMotionConfig = {
 };
 
 const contentMotionConfig = {
-  initial: { opacity: 0, x: -50 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 50 },
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
   transition: { duration: 0.6 },
 };
 
-function CrewContent() {
+function TechContent() {
   const [activeTab, setActiveTab] = useState("0");
 
   const [loading, setLoading] = useState(true);
@@ -35,11 +35,11 @@ function CrewContent() {
     setTimeout(() => setLoading(false), 400);
   };
 
-  const tabItems = crewData.map((person, index) => ({
-    label: person.name.toUpperCase().split(" ")[0],
+  const tabItems = techData.map((tech, index) => ({
+    label: index + 1,
     key: index.toString(),
     children: loading ? (
-      <div className="flex min-h-[783px] items-center justify-center md:min-h-[644px] lg:min-h-[444px]">
+      <div className="flex min-h-[783px] items-center justify-center md:min-h-[644px] lg:min-h-[448px]">
         <Spin size="large" />
       </div>
     ) : (
@@ -47,35 +47,33 @@ function CrewContent() {
         {!loading && (
           <motion.div
             key={index}
-            className="flex h-[728px] flex-row-reverse flex-wrap items-center justify-center md:h-[644px] lg:h-[444px] lg:justify-between"
+            className="flex h-[728px] flex-row-reverse flex-wrap items-center justify-center md:h-[644px] lg:h-[448px] lg:justify-between"
           >
-            {/* Left Side: Crew Image */}
+            {/* Left Side: Tech Image */}
             <motion.picture {...imageMotionConfig} className="mb-8 lg:mb-0">
-              <source srcSet={person.images.webp} type="image/webp" />
+              <source srcSet={tech.images.portrait} type="image/webp" />
               <Image
-                src={person.images.png}
-                alt={person.name}
-                width={300}
-                height={300}
+                src={tech.images.portrait}
+                alt={tech.name}
+                width={400}
+                height={400}
                 priority
+                className="rounded shadow-lg"
               />
             </motion.picture>
 
             {/* Right Side: Tab Content */}
             <motion.div
               {...contentMotionConfig}
-              className="mb-4 max-w-3xl lg:mb-0"
+              className="mb-4 max-w-2xl lg:mb-0"
             >
-              <h1 className="mb-2 font-headings text-2xl font-bold uppercase tracking-widest text-[#D0D6F9] lg:text-3xl">
-                {person.role}
-              </h1>
-              <h2 className="font-headings text-4xl font-semibold uppercase tracking-wide text-white lg:text-7xl">
-                {person.name}
+              <h2 className="mb-2 font-headings text-3xl font-bold uppercase tracking-widest text-[#D0D6F9] lg:text-6xl">
+                {tech.name}
               </h2>
 
-              {/* Bio */}
+              {/* Description */}
               <p className="mt-4 font-headings text-lg text-[#D0D6F9] lg:text-xl">
-                {person.bio}
+                {tech.description}
               </p>
             </motion.div>
           </motion.div>
@@ -85,9 +83,9 @@ function CrewContent() {
   }));
 
   return (
-    <motion.article className="crew-content">
+    <motion.article className="tech-content">
       {loading && activeTab === "0" ? (
-        <div className="loading-indicator flex min-h-[783px] items-center justify-center md:min-h-[705px] lg:min-h-[505px]">
+        <div className="loading-indicator flex min-h-[783px] items-center justify-center md:min-h-[700px] lg:min-h-[503px]">
           <Spin size="large" />
         </div>
       ) : (
@@ -96,10 +94,11 @@ function CrewContent() {
           centered
           items={tabItems}
           onChange={onTabChange}
+          type="card"
         />
       )}
     </motion.article>
   );
 }
 
-export default CrewContent;
+export default TechContent;

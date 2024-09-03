@@ -29,6 +29,12 @@ const config: Config = {
         "crew-mobile": "url('/assets/crew/background-crew-mobile.jpg')",
         "crew-tablet": "url('/assets/crew/background-crew-tablet.jpg')",
         "crew-desktop": "url('/assets/crew/background-crew-desktop.jpg')",
+        "technology-mobile":
+          "url('/assets/technology/background-technology-mobile.jpg')",
+        "technology-tablet":
+          "url('/assets/technology/background-technology-tablet.jpg')",
+        "technology-desktop":
+          "url('/assets/technology/background-technology-desktop.jpg')",
       },
       animation: {
         "spin-slow": "spin 24s linear infinite",

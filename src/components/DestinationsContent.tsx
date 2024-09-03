@@ -19,13 +19,6 @@ const contentMotionConfig = {
   transition: { duration: 0.6 },
 };
 
-const pageMotionConfig = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
-  transition: { duration: 0.6 },
-};
-
 function Destinations() {
   const [activeTab, setActiveTab] = useState("0");
 
