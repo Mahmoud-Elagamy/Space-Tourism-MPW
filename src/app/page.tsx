@@ -3,7 +3,7 @@ import ExploreButton from "@/components/ExploreButton";
 export default function Home() {
   return (
     <main
-      className={`bg-home-mobile md:bg-home-tablet lg:bg-home-desktop flex min-h-screen items-center justify-center bg-cover pt-24`}
+      className={`main bg-home-mobile md:bg-home-tablet lg:bg-home-desktop`}
     >
       <div className="container flex flex-wrap items-center justify-center lg:justify-between">
         <div className="max-w-xl text-center uppercase text-[#D0D6F9] lg:text-start">

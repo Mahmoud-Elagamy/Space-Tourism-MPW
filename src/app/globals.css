@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .main {
+    @apply flex min-h-screen items-center justify-center bg-cover bg-no-repeat pt-24;
+  }
+}
+
+.ant-tabs .ant-tabs-nav::before {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 992px) {
+  .destination-content .ant-tabs .ant-tabs-nav .ant-tabs-nav-wrap {
+    justify-content: start;
+  }
+}
+
+.ant-tabs-tab-btn {
+  color: #d0d6f9;
+  letter-spacing: 1.2px;
+}
+
+.ant-tabs-tab-btn:hover {
+  color: white;
+}

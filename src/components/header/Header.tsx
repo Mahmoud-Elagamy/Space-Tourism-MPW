@@ -16,7 +16,7 @@ const Header = () => {
   const closeDrawer = () => setDrawerVisible(false);
 
   return (
-    <header className="absolute left-0 right-0 top-10 md:top-16">
+    <header className="absolute left-0 right-0 top-10 mx-auto max-w-[1536px] md:top-16">
       <div className="container flex items-center justify-between">
         <Link href="/" title="Logo" aria-label="Navigate to homepage">
           <Image src={logo} alt="Logo" width={48} height={48} priority />
