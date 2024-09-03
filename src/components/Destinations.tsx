@@ -80,7 +80,7 @@ function Destinations() {
               </h2>
 
               {/* Description */}
-              <p className="mt-4 font-headings text-[#D0D6F9] lg:text-xl">
+              <p className="mt-4 font-headings text-lg text-[#D0D6F9] lg:text-xl">
                 {destination.description}
               </p>
 
@@ -112,7 +112,7 @@ function Destinations() {
   return (
     <motion.article className="destination-content">
       {loading && activeTab === "0" ? (
-        <div className="loading-indicator flex items-center justify-center md:h-[826px] lg:h-[507px]">
+        <div className="loading-indicator flex min-h-[783px] items-center justify-center md:min-h-[826px] lg:min-h-[507px]">
           <Spin size="large" />
         </div>
       ) : (
