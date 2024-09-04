@@ -42,7 +42,7 @@ const Header = () => {
           closeIcon={<IconClose />}
           style={{
             backgroundColor: "#0b0d1760",
-            backdropFilter: "blur(2px)",
+            backdropFilter: "blur(3px)",
           }}
         >
           <NavLinks closeDrawer={closeDrawer} />

@@ -47,7 +47,7 @@ function TechContent() {
         {!loading && (
           <motion.div
             key={index}
-            className="flex h-[728px] flex-row-reverse flex-wrap items-center justify-center md:h-[644px] lg:h-[448px] lg:justify-between"
+            className="flex h-screen flex-row-reverse flex-wrap items-center justify-center md:h-[644px] lg:h-[448px] lg:justify-between"
           >
             {/* Left Side: Tech Image */}
             <motion.picture {...imageMotionConfig} className="mb-8 lg:mb-0">
@@ -85,7 +85,7 @@ function TechContent() {
   return (
     <motion.article className="tech-content">
       {loading && activeTab === "0" ? (
-        <div className="loading-indicator flex min-h-[783px] items-center justify-center md:min-h-[700px] lg:min-h-[503px]">
+        <div className="loading-indicator flex min-h-screen items-start justify-center md:min-h-[700px] md:items-center lg:min-h-[503px]">
           <Spin size="large" />
         </div>
       ) : (

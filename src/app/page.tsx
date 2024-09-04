@@ -11,7 +11,7 @@ export default function Home() {
           <h1 className="mb-4 font-headings text-4xl text-slate-50 md:text-9xl">
             Space
           </h1>
-          <p className="mb-8 font-headings normal-case md:text-xl lg:mb-0">
+          <p className="mb-8 font-headings text-lg normal-case md:text-xl lg:mb-0">
             Let&apos;s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
             Well sit back, and relax because we&apos;ll give you a truly out of
