@@ -43,3 +43,7 @@
 .tech-content .ant-tabs-nav-wrap .ant-tabs-nav-list .ant-tabs-tab {
   border-radius: 50%;
 }
+
+.tech-content .ant-tabs-nav-list .ant-tabs-tab:hover {
+  border-color: #1677ff;
+}

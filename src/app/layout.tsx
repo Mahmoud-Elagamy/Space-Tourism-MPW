@@ -20,7 +20,10 @@ const barlow = Barlow_Condensed({
 import Header from "@/components/header/Header";
 
 export const metadata: Metadata = {
-  title: "Space Tourism",
+  title: {
+    default: "Space Tourism",
+    template: "%s | Space Tourism",
+  },
   description: "A minimal Space Tourism MPW built with Next.js",
 };
 

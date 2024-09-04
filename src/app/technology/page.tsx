@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
 import TechContent from "@/components/TechContent";
 
+export const metadata: Metadata = {
+  title: "Technology",
+};
 const Tech = () => {
   return (
     <main className="main bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop">

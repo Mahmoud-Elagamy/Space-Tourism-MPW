@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import Destinations from "@/components/DestinationsContent";
+
+export const metadata: Metadata = {
+  title: "Destination",
+};
 
 const Destination = () => {
   return (

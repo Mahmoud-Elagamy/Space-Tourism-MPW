@@ -12,7 +12,7 @@ const ExploreButton = () => {
         whileHover="hover"
         whileTap="tap"
         variants={containerVariants}
-        transition={{ type: "spring", stiffness: 300 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
       >
         {/* Rocket Icon */}
         <motion.div variants={rocketVariants}>

@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import CrewContent from "@/components/CrewContent";
+
+export const metadata: Metadata = {
+  title: "Crew",
+};
 
 const Crew = () => {
   return (

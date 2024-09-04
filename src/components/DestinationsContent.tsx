@@ -2,36 +2,25 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Tabs, Spin } from "antd";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { destinationsData } from "@/app/destination/data";
-
-// Motion configurations
-const imageMotionConfig = {
-  initial: { opacity: 0, scale: 0.8 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.6 },
-};
-
-const contentMotionConfig = {
-  initial: { opacity: 0, x: -50 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 50 },
-  transition: { duration: 0.6 },
-};
+import { fadeIn } from "@/utils/motionVariants";
+import { slideIn } from "@/utils/motionVariants";
 
 function Destinations() {
-  const [activeTab, setActiveTab] = useState("0");
-
   const [loading, setLoading] = useState(true);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 600);
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setIsInitialLoad(false);
+    }, 600);
     return () => clearTimeout(timer);
   }, []);
 
-  const onTabChange = (key: string) => {
+  const onTabChange = () => {
     setLoading(true);
-    setActiveTab(key);
     setTimeout(() => setLoading(false), 400);
   };
 
@@ -39,19 +28,22 @@ function Destinations() {
     label: destination.name.toUpperCase(),
     key: index.toString(),
     children: loading ? (
-      <div className="flex h-[445px] items-center justify-center">
+      <div className="flex h-screen items-start justify-center md:h-[844px] md:items-center lg:h-[445px]">
         <Spin size="large" />
       </div>
     ) : (
-      <AnimatePresence mode="wait">
+      <>
         {!loading && (
           <motion.div
             key={index}
             className="flex flex-row-reverse flex-wrap items-center justify-center lg:justify-between"
+            variants={fadeIn()}
+            initial="hidden"
+            animate="visible"
           >
             {/* Left Side: Planet Image */}
             <motion.picture
-              {...imageMotionConfig}
+              variants={fadeIn(0.8, 1)}
               className="mb-4 overflow-hidden lg:mb-0"
             >
               <source srcSet={destination.images.webp} type="image/webp" />
@@ -66,7 +58,10 @@ function Destinations() {
             </motion.picture>
 
             {/* Right Side: Tab Content */}
-            <motion.div {...contentMotionConfig} className="max-w-md">
+            <motion.div
+              variants={slideIn("left", 0, 0.6, 50)}
+              className="max-w-md"
+            >
               {/* Active Planet Name */}
               <h2 className="font-headings text-6xl font-semibold uppercase tracking-wide text-white lg:text-8xl">
                 {destination.name}
@@ -98,13 +93,13 @@ function Destinations() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </>
     ),
   }));
 
   return (
     <motion.article className="destination-content">
-      {loading && activeTab === "0" ? (
+      {isInitialLoad ? (
         <div className="loading-indicator flex min-h-[783px] items-center justify-center md:min-h-[826px] lg:min-h-[507px]">
           <Spin size="large" />
         </div>

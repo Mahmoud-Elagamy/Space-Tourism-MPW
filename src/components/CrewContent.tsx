@@ -2,36 +2,25 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Tabs, Spin } from "antd";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { crewData } from "@/app/crew/data";
-
-// Motion configurations
-const imageMotionConfig = {
-  initial: { opacity: 0, scale: 0.8 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.6 },
-};
-
-const contentMotionConfig = {
-  initial: { opacity: 0, x: -50 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 50 },
-  transition: { duration: 0.6 },
-};
+import { fadeIn } from "@/utils/motionVariants";
+import { slideIn } from "@/utils/motionVariants";
 
 function CrewContent() {
-  const [activeTab, setActiveTab] = useState("0");
-
   const [loading, setLoading] = useState(true);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 600);
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setIsInitialLoad(false);
+    }, 600);
     return () => clearTimeout(timer);
   }, []);
 
-  const onTabChange = (key: string) => {
+  const onTabChange = () => {
     setLoading(true);
-    setActiveTab(key);
     setTimeout(() => setLoading(false), 400);
   };
 
@@ -39,18 +28,21 @@ function CrewContent() {
     label: person.name.toUpperCase().split(" ")[0],
     key: index.toString(),
     children: loading ? (
-      <div className="flex min-h-[783px] items-center justify-center md:min-h-[644px] lg:min-h-[444px]">
+      <div className="flex min-h-[768px] items-center justify-center md:min-h-[718px] lg:min-h-[444px]">
         <Spin size="large" />
       </div>
     ) : (
-      <AnimatePresence mode="wait">
+      <>
         {!loading && (
           <motion.div
             key={index}
-            className="flex h-[728px] flex-row-reverse flex-wrap items-center justify-center md:h-[644px] lg:h-[444px] lg:justify-between"
+            className="flex h-[769px] flex-row-reverse flex-wrap items-center justify-center md:h-[718px] lg:h-[444px] lg:justify-between"
+            variants={fadeIn()}
+            initial="hidden"
+            animate="visible"
           >
             {/* Left Side: Crew Image */}
-            <motion.picture {...imageMotionConfig} className="mb-8 lg:mb-0">
+            <motion.picture variants={fadeIn(0.8, 1)} className="mb-8 lg:mb-0">
               <source srcSet={person.images.webp} type="image/webp" />
               <Image
                 src={person.images.png}
@@ -63,7 +55,7 @@ function CrewContent() {
 
             {/* Right Side: Tab Content */}
             <motion.div
-              {...contentMotionConfig}
+              variants={slideIn("left", 0, 0.6, 50)}
               className="mb-4 max-w-3xl lg:mb-0"
             >
               <h1 className="mb-2 font-headings text-2xl font-bold uppercase tracking-widest text-[#D0D6F9] lg:text-3xl">
@@ -80,14 +72,14 @@ function CrewContent() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </>
     ),
   }));
 
   return (
     <motion.article className="crew-content">
-      {loading && activeTab === "0" ? (
-        <div className="loading-indicator flex min-h-[783px] items-center justify-center md:min-h-[705px] lg:min-h-[505px]">
+      {isInitialLoad ? (
+        <div className="loading-indicator flex min-h-[783px] items-start justify-center md:min-h-[780px] md:items-center lg:min-h-[505px]">
           <Spin size="large" />
         </div>
       ) : (
