@@ -12,9 +12,8 @@ A space tourism multi-page website built using modern web technologies. This pro
 
 Explore the live demo of the Space Tourism multi-page website [here](https://space-tourism-mpw.netlify.app/). See the interactive design and functionality in action!
 
-![](/assets/Space-Tourism-preview.png)
-![](/assets/Destination-Space-Tourism-preview.png)
 ![](/public/assets/Space-Tourism-preview.png)
+![](/public/assets/Space-Tourism-mobile-preview.png)
 ![](/public/assets/Destination-Space-Tourism-preview.png)
 
 ## Features
