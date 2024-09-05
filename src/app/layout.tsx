@@ -51,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bellefair.variable} ${barlow.variable}`}>
-      <body className="bg-[#0B0D17]">
+      <body className="bg-gradient-to-br from-[#0B0D19] to-[#0C1D39]">
         <Header />
         {children}
       </body>
