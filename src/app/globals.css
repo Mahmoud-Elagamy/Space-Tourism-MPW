@@ -4,7 +4,7 @@
 
 @layer utilities {
   .main {
-    @apply flex min-h-screen items-center justify-center bg-cover bg-no-repeat pt-24;
+    @apply flex min-h-screen items-center justify-center bg-cover bg-no-repeat pt-32;
   }
 }
 
@@ -29,6 +29,12 @@
 
 :is(.crew-content, .tech-content) .ant-tabs {
   flex-direction: column-reverse;
+}
+
+@media screen and (max-width: 767px) {
+  :is(.crew-content, .tech-content) .ant-tabs .ant-tabs-nav {
+    margin-top: 32px;
+  }
 }
 
 .tech-content .ant-tabs-content-holder {
