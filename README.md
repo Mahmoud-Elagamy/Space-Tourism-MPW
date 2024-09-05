@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Space Tourism Multi-Page Website
 
-## Getting Started
+A space tourism multi-page website built using modern web technologies. This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/), showcasing planets, crew members, and technology related to space travel, with interactive tabbed navigation and animations.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Demo](#demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Explore the live demo of the Space Tourism multi-page website [here](https://space-tourism-mpw.netlify.app/). See the interactive design and functionality in action!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- Responsive design across desktop, tablet, and mobile.
+- Tabbed navigation to switch between different space-related information (planets, crew, and technology).
+- Loading spinner to indicate page and tab transitions.
+- Animations for content using Framer Motion.
+- Centralized loading state management across pages.
+- Optimized layout and styles for a consistent user experience.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **[React](https://reactjs.org/)**: JavaScript library for building user interfaces.
+- **[Next.js](https://nextjs.org/)**: Framework for server-side rendering and static site generation.
+- **[TypeScript](https://www.typescriptlang.org/)**: Strict typing for better code maintainability and autocompletion.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework for styling.
+- **[Ant Design](https://ant.design/)**: Provides components like tabs and loading spinner.
+- **[Framer Motion](https://www.framer.com/motion/)**: Enables animations and transitions.
