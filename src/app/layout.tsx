@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     default: "Space Tourism",
     template: "%s | Space Tourism",
   },
-  description: "A minimal Space Tourism MPW built with Next.js",
+  description: "A minimalist Space Tourism MPW built with Next.js",
   openGraph: {
     title: "Space Tourism",
-    description: "A minimal Space Tourism MPW built with Next.js",
+    description: "A minimalist Space Tourism MPW built with Next.js",
     url: "https://space-tourism-mpw.netlify.app/",
     images: [
       {
