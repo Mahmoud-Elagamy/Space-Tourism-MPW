@@ -1,6 +1,5 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Head from "next/head";
 import { Result, Button } from "antd";
 
 export const metadata = {
