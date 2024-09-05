@@ -14,6 +14,8 @@ Explore the live demo of the Space Tourism multi-page website [here](https://spa
 
 ![](/assets/Space-Tourism-preview.png)
 ![](/assets/Destination-Space-Tourism-preview.png)
+![](/public/assets/Space-Tourism-preview.png)
+![](/public/assets/Destination-Space-Tourism-preview.png)
 
 ## Features
 
