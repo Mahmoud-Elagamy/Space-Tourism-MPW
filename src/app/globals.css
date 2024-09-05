@@ -8,6 +8,10 @@
   }
 }
 
+.ant-drawer .ant-drawer-content-wrapper {
+  transition: 0.6s ease-in-out;
+}
+
 .ant-tabs .ant-tabs-nav::before {
   border-bottom: none;
 }
