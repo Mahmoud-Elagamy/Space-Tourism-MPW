@@ -6,7 +6,6 @@ import {
   glowVariants,
   rocketVariants,
   particleVariants,
-  textVariants,
 } from "@/utils/motionVariants";
 
 const ExploreButton = () => {
@@ -33,15 +32,15 @@ const ExploreButton = () => {
 
         {/* Cool Blue Glow */}
         <motion.div
-          className="absolute bottom-0 h-12 w-12 rounded-full bg-blue-500 opacity-0 blur-xl filter md:h-16 md:w-16"
+          className="absolute bottom-0 size-12 rounded-full bg-blue-500 opacity-0 blur-xl filter md:size-16"
           variants={glowVariants}
         />
 
         {/* Particle Trail */}
-        {[...Array(3)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute bottom-0 h-2 w-2 rounded-full bg-blue-300 blur-sm filter"
+            className="absolute bottom-0 size-2 rounded-full bg-blue-400 blur-sm filter"
             style={{
               left: `${i * 20}%`,
               opacity: 0.7 - i * 0.2,
@@ -51,10 +50,7 @@ const ExploreButton = () => {
         ))}
 
         {/* Explore Text */}
-        <motion.span
-          className="absolute bottom-6 text-xl uppercase tracking-widest text-white md:text-2xl"
-          variants={textVariants}
-        >
+        <motion.span className="absolute bottom-6 text-xl uppercase tracking-widest text-white md:text-2xl">
           Explore
         </motion.span>
       </motion.div>

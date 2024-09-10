@@ -57,9 +57,3 @@ export const particleVariants = {
   },
   tap: { opacity: 0, y: 100, transition: { duration: 0.5 } },
 };
-
-export const textVariants = {
-  rest: { opacity: 1 },
-  hover: { opacity: 0 },
-  tap: { opacity: 0 },
-};
