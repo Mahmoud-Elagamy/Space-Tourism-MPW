@@ -1,11 +1,21 @@
-"use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaRocket } from "react-icons/fa";
+import {
+  containerVariants,
+  glowVariants,
+  rocketVariants,
+  particleVariants,
+  textVariants,
+} from "@/utils/motionVariants";
 
 const ExploreButton = () => {
   return (
-    <Link href="/destination" aria-label="Explore destination">
+    <Link
+      href="/destination"
+      aria-label="Explore destination"
+      title="Explore destination"
+    >
       <motion.div
         className="relative flex size-40 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#0B0D19] to-[#0C1D39] md:size-60"
         initial="rest"
@@ -13,6 +23,8 @@ const ExploreButton = () => {
         whileTap="tap"
         variants={containerVariants}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        role="button"
+        aria-hidden="true"
       >
         {/* Rocket Icon */}
         <motion.div variants={rocketVariants}>
@@ -48,53 +60,6 @@ const ExploreButton = () => {
       </motion.div>
     </Link>
   );
-};
-
-// Animation Variants
-const containerVariants = {
-  rest: { scale: 1 },
-  hover: { scale: 1.05 },
-  tap: { scale: 0.95 },
-};
-
-const rocketVariants = {
-  rest: { y: 0 },
-  hover: { y: -10 },
-  tap: { y: -100, transition: { duration: 0.5 } },
-};
-
-const glowVariants = {
-  rest: { opacity: 0, scale: 0 },
-  hover: {
-    opacity: 0.5,
-    scale: 1.5,
-    y: 10,
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-  tap: { opacity: 1, scale: 2, y: 100, transition: { duration: 0.5 } },
-};
-
-const particleVariants = {
-  rest: { opacity: 0, y: 0 },
-  hover: {
-    opacity: 1,
-    y: [10, -10],
-    transition: {
-      yoyo: Infinity,
-      duration: 0.4,
-      ease: "easeInOut",
-    },
-  },
-  tap: { opacity: 0, y: 100, transition: { duration: 0.5 } },
-};
-
-const textVariants = {
-  rest: { opacity: 1 },
-  hover: { opacity: 0 },
-  tap: { opacity: 0 },
 };
 
 export default ExploreButton;
