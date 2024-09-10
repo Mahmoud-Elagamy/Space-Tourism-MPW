@@ -23,7 +23,6 @@ const ExploreButton = () => {
         variants={containerVariants}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         role="button"
-        aria-hidden="true"
       >
         {/* Rocket Icon */}
         <motion.div variants={rocketVariants}>
