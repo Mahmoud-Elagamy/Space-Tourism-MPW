@@ -55,7 +55,7 @@ const TabContent = ({
           width={imageWidth}
           height={imageHeight}
           priority
-          className={`${animateImage ? "animate-spin-slow" : ""} max-h-[445px] ${explicitHeight ? "lg:h-[445px]" : ""} ${styleImage ? "rounded-md shadow-md" : ""}`}
+          className={`${animateImage ? "animate-spin-slow" : ""} $ w-64 md:w-72 ${explicitHeight ? "lg:h-[340px]" : ""} ${styleImage ? "rounded-md shadow-md" : ""}`}
         />
       </motion.picture>
 
