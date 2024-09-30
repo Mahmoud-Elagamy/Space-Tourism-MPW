@@ -38,7 +38,7 @@ const TabContent = ({
 }: TabContentProps) => {
   return (
     <motion.div
-      className="flex flex-row-reverse flex-wrap items-center justify-center md:h-[700px] lg:h-auto lg:justify-between"
+      className="flex flex-row-reverse flex-wrap items-center justify-center md:h-[700px] lg:h-[321px] lg:justify-between"
       variants={fadeIn()}
       initial="hidden"
       animate="visible"
