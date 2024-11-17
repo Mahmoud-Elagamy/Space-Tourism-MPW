@@ -1,8 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import ExploreButton from "@/components/ExploreButton";
-import { fadeIn } from "@/utils/motionVariants";
-import { slideIn } from "@/utils/motionVariants";
+import { fadeIn, slideIn } from "@/utils/motionVariants";
 import useLoading from "@/hooks/useLoading";
 import LoadingSpinner from "@/components/LoadingIndicator";
 
@@ -37,7 +36,7 @@ export default function Home() {
               out of this world experience!
             </p>
           </motion.div>
-          <motion.div variants={slideIn("right", 0.6)}>
+          <motion.div variants={slideIn("right", 0.4)}>
             <ExploreButton />
           </motion.div>
         </motion.div>

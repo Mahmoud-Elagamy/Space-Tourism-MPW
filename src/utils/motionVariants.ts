@@ -1,6 +1,6 @@
 export const fadeIn = (initScaleValue?: number, endScaleValue?: number) => ({
   hidden: { opacity: 0, scale: initScaleValue },
-  visible: { opacity: 1, scale: endScaleValue, transition: { duration: 0.6 } },
+  visible: { opacity: 1, scale: endScaleValue, transition: { duration: 0.3 } },
 });
 
 export const slideIn = (
